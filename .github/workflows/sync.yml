@@ -18,7 +18,7 @@ jobs:
           path: .wiki
       - name: sync wiki
         run: |
-          set -ex
+          set -x
           cd .wiki
           git config --local user.email ${{ secrets.ACTOR_NAME }}@users.noreply.github.com
           git config --local user.name ${{ secrets.ACTOR_NAME }}
