@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths-ignore: '.github/**'
-    
+
   workflow_dispatch:
 
 jobs:
@@ -21,10 +21,10 @@ jobs:
           cd .wiki
           git config --local user.email ${{ secrets.ACTOR_NAME }}@users.noreply.github.com
           git config --local user.name ${{ secrets.ACTOR_NAME }}
-          git remote add tmp git@github.com:ipeblb/wiki-test
+          git remote add tmp https://github.com/ipeblb/wiki-test.git
           git fetch tmp
           git merge --no-commit -X theirs tmp/main
           git reset HEAD .github/
           git commit -m "merge from master"
           git push -f
-          
+
