@@ -24,7 +24,7 @@ jobs:
           git config --local user.name ${{ secrets.ACTOR_NAME }}
           git remote add tmp https://github.com/ipeblb/wiki-test.git
           git fetch tmp
-          git ch -b tmp tmp/main
+          git checkout -b tmp tmp/main
           git rm -rf .github/
           git add .
           git commit -m "delete github actions"
