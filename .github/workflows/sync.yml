@@ -29,5 +29,5 @@ jobs:
           git add .
           git commit -m "delete github actions"
           git diff tmp origin/master
-          git push -f origin master
+          git push -f origin tmp:master
 
