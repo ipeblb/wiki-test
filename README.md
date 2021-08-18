@@ -1,3 +1,3 @@
 Welcome to the wiki-test wiki!
 
-action fix test
+action fix test2
