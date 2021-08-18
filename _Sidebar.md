@@ -1,15 +1,15 @@
 [[Home]]
 [[README]]
-<detail>
+<details>
 <summary>testfile</summary>
 
     <li>
         <ul> [[test]]
         <ul>
-            <detail>
+            <details>
                 <summary>test2</summary>
 
                 [[test2]]
-            </detail>
+            </details>
         </ul>
-</detail>
+</details>
