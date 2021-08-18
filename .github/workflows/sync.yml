@@ -26,6 +26,7 @@ jobs:
           git fetch tmp
           git merge --no-commit -X theirs tmp/main
           git reset HEAD .github/
+          git status
           git commit -m "merge from master"
           git push -f
 
