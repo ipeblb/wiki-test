@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore: '.github/**'
+    
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: ipeblb/wiki-test.wiki
+          path: .wiki
+      - name: sync wiki
+        run: |
+          cd .wiki
+          git config --local user.email ${{ secrets.ACTOR_NAME }}@users.noreply.github.com
+          git config --local user.name ${{ secrets.ACTOR_NAME }}
+          git remote add tmp git@github.com:ipeblb/wiki-test
+          git fetch tmp
+          git merge --no-commit -X theirs tmp/main
+          git reset HEAD .github/
+          git commit -m "merge from master"
+          git push -f
+          
