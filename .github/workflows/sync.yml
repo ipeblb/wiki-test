@@ -24,9 +24,9 @@ jobs:
           git config --local user.name ${{ secrets.ACTOR_NAME }}
           git remote add tmp https://github.com/ipeblb/wiki-test.git
           git fetch tmp
-          git merge --no-commit --no-ff -X theirs --allow-unrelated-histories tmp/main
-          git reset HEAD .github/
-          git status
-          git commit -m "merge from master"
-          git push -f
+          git ch -b tmp tmp/main
+          git rm -rf .github/
+          git add .
+          git commit -m "delete github actions"
+          git push -f origin master
 
